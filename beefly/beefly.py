@@ -7,7 +7,7 @@ from IPython.display import clear_output
 
 
 
-class PlotMetrics():
+class plot_metrics():
     def __init__(self, columns=2, iter_num=None, mode=1, wait_num=1, figsize=None, cell_size=(6, 4), valid_fmt="val_{}"):
         self.columns = columns
         self.iter_num = iter_num
