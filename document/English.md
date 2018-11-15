@@ -1,16 +1,16 @@
-#BeeFly
+# BeeFly
 
 Beefly is efficient visualization training packages of Keras, enabling the live visualization of loss function and metrics during training process.
 
 Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as Beefly's developing environment.
 
-#Install
+# Install
 you can install by pypi:
 ```Bash
 pip install beefly 
 ```
 
-#Function
+# Function
 - Visualization of general machine learning training
   - Support customizing the name of loss function and metric 
   - Support customizing the name of validation set
