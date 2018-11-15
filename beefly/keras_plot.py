@@ -1,7 +1,8 @@
+import tensorflow as tf
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from IPython.display import clear_output
-from tensorflow.keras.callbacks import Callback
+
 
 def draw(metrics, logs, epoch, columns, iter_num, mode, wait_num, xlabel, figsize, cell_size, valid_fmt):
     if epoch%wait_num==0:
@@ -20,8 +21,10 @@ def draw(metrics, logs, epoch, columns, iter_num, mode, wait_num, xlabel, figsiz
         plt.tight_layout()
         plt.show()
 
-class PlotMetrics(Callback):
+class PlotMetrics(tf.keras.callbacks.Callback):
     def __init__(self, columns=2, iter_num=None, mode=1, wait_num=1, figsize=None, cell_size=(6, 4), valid_fmt="val_{}"):
+        assert (mode==1)|(mode==0), 'please mode input 0 or 1'
+        tf.logging.set_verbosity(tf.logging.ERROR)
         self.columns = columns
         self.iter_num = iter_num
         self.mode = mode
