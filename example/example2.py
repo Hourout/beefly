@@ -25,7 +25,7 @@ def simple_mnist(batch_num=1000, batch_size=32, image_shape=(28,28,1)):
     y_train = y_train.reshape(-1, 1)
     y_test = y_test.reshape(-1, 1)
     
-    beeplot = beefly.plot_metrics()
+    beeplot = beefly.plot_metrics(valid_fmt="test_{}"))
     for batch in range(batch_num):
         train_random = np.random.choice(range(X_train.shape[0]), batch_size, False)
         test_random = np.random.choice(range(X_test.shape[0]), batch_size, False)
@@ -34,7 +34,7 @@ def simple_mnist(batch_num=1000, batch_size=32, image_shape=(28,28,1)):
         loss = model.train_on_batch(train_batch_image, train_batch_label)
         result = model.test_on_batch(test_batch_image, test_batch_label)
         if batch%2==0:
-            beeplot.update({'train_loss':loss[0], 'train_accuracy': loss[1],
+            beeplot.update({'loss':loss[0], 'accuracy': loss[1],
                             'test_loss': result[0], 'test_accuracy': result[1]})
             beeplot.draw()
     return model
