@@ -44,7 +44,7 @@ class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
             logs.pop(i)
         for old_name, new_name in zip(self.model.metrics_names, self.metrics_name):
             logs[new_name] = logs.pop(old_name)
-        if self.validation_data is not None:
+        if len(self.validation_data)>0:
             if self.eval_batch_num is not None:
                 self.new_val_name = [self.valid_fmt.split('_')[0]+'_'+i for i in self.metrics_name]
                 self.metrics = self.new_val_name+self.metrics_name
