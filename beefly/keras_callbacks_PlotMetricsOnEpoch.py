@@ -38,7 +38,7 @@ class PlotMetricsOnEpoch(tf.keras.callbacks.Callback):
         self.epoch_logs = defaultdict(list)
 
     def on_epoch_end(self, epoch, logs=None):
-        if self.validation_data is None:
+        if len(self.validation_data)==0:
             old_all_name = self.model.metrics_names
             new_all_name = self.metrics_name
         else:
