@@ -2,10 +2,11 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from IPython.display import clear_output
-from tensorflow.keras.callbacks import Callback
+
 
 def draw(metrics, logs, epoch, columns, iter_num, wait_num, eval_batch_num, figsize, cell_size, valid_fmt):
-    if (epoch%wait_num==0)|(epoch%eval_batch_num==0):
+    logit = epoch%wait_num==0 if eval_batch_num is None else (epoch%wait_num==0)|(epoch%eval_batch_num==0)
+    if logit:
         clear_output(wait=True)
         plt.figure(figsize=figsize)
         for metric_id, metric in enumerate(metrics):
@@ -26,6 +27,7 @@ class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
     def __init__(self, metrics_name, columns=2, iter_num=None, wait_num=1, figsize=None, cell_size=(6, 4), valid_fmt="val_{}", eval_batch_num=None):
         tf.logging.set_verbosity(tf.logging.ERROR)
         self.metrics_name = metrics_name
+        self.metrics = metrics_name
         self.columns = columns
         self.iter_num = iter_num
         self.wait_num = wait_num
@@ -51,8 +53,6 @@ class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
                                                          [self.validation_data[i] for i in range(1, int(len(self.validation_data)/2))])
                     for loss_value, new_name in zip(loss_list, self.new_val_name):
                         logs[new_name] = loss_value
-        else:
-            self.metrics = self.metrics_name
         if self.figsize is None:
             self.figsize = (self.columns*self.cell_size[0], ((len(self.metrics)+1)//self.columns+1)*self.cell_size[1])
         for metric in logs:
