@@ -25,7 +25,7 @@ def simple_mnist(batch_num=1000, batch_size=32, image_shape=(28,28,1)):
     y_train = y_train.reshape(-1, 1)
     y_test = y_test.reshape(-1, 1)
     
-    beeplot = beefly.plot_metrics(iter_num=batch_num))
+    beeplot = beefly.plot_metrics(iter_num=batch_num)
     for batch in range(batch_num):
         train_random = np.random.choice(range(X_train.shape[0]), batch_size, False)
         test_random = np.random.choice(range(X_test.shape[0]), batch_size, False)
