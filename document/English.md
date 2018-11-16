@@ -41,3 +41,5 @@ pip install git+git://github.com/Hourout/beefly.git
   - Support setting maximum training number of iterations in batch way
   - Support visual plotting in batch way
   - Support visual plotting in both batch way and epoch way periodically in batch way
+
+## [API Document](/document/English_API.md)
