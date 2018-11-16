@@ -6,7 +6,7 @@ Beefly在Jupyter Notebook中运行，我们推荐且使用Jupyter Notebook作为
 
 ## 安装
 你可以通过pypi进行安装：
-```Bash
+```
 pip install beefly 
 ```
 
