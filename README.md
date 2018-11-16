@@ -1,4 +1,8 @@
-# BeeFly
+# Beefly
+
+![PyPI version](https://img.shields.io/pypi/pyversions/beefly.svg)
+![PyPI license](https://img.shields.io/pypi/l/beefly.svg)
+![PyPI status](https://img.shields.io/pypi/status/beefly.svg)
 
 Beefly is efficient visualization training packages of Keras, enabling the live visualization of loss function and metrics during training process.
 
@@ -6,7 +10,7 @@ Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as B
 
 
 ## [API Document](/document/English_API.md)
-## [API 文档](/document/Chinese_API.md)
+## [API文档](/document/Chinese_API.md)
 ## [中文介绍](/document/Chinese.md)
 
 ## Installation
