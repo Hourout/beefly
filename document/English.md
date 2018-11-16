@@ -4,6 +4,9 @@ Beefly is efficient visualization training packages of Keras, enabling the live 
 
 Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as Beefly's developing environment.
 
+
+## [API Document](/document/English_API.md)
+
 ## Installation
 
 To install [this verson from PyPI](https://pypi.org/project/beefly/), type:
@@ -42,4 +45,8 @@ pip install git+git://github.com/Hourout/beefly.git
   - Support visual plotting in batch way
   - Support visual plotting in both batch way and epoch way periodically in batch way
 
-## [API Document](/document/English_API.md)
+
+## Example
+- [beefly.plot_metrics()](/example/plot_metrics.ipynb)
+- [beefly.PlotMetricsOnBatch()](/example/PlotMetricsOnBatch.ipynb)
+- [beefly.PlotMetricsOnEpoch()](/example/PlotMetricsOnEpoch.ipynb)
