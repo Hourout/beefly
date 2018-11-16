@@ -4,13 +4,13 @@ Beefly是一个简洁高效的keras可视化训练库，能够在训练过程中
 
 Beefly在Jupyter Notebook中运行，我们推荐且使用Jupyter Notebook作为beefly的开发环境。
 
-# 安装
+## 安装
 你可以通过pypi进行安装：
 ```Bash
 pip install beefly 
 ```
 
-# 功能
+## 功能
 - 通用机器学习训练可视化
   - 支持自定义损失函数和度量指标名字 [example](/example/example1.py)
   - 支持同一指标训练集验证集在结果在一张图中显示 [example](/example/example2.py)
@@ -32,3 +32,5 @@ pip install beefly
   - 支持batch模式下设定训练最大迭代次数
   - 支持batch模式下可视化绘图排版
   - 支持batch模式下每间隔固定周期epoch可视化绘图
+
+## [API文档](/document/Chinese_API.md)
