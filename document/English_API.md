@@ -4,7 +4,7 @@
 beefly.plot_metrics(columns=2, iter_num=None, mode=1, wait_num=1, figsize=None, cell_size=(6, 4), valid_fmt="val_{}")
 ```
 
-# Parameter：
+### Parameter：
 - columns：int，default 2，The number of sub graphs that the width of metrics visualiztion image to accommodate at most；
 - iter_num：int，default None，Pre-specify the maximum value of x-axis in each sub-picture to indicate the maximum number of batch or epoch training;
 - mode：int，default 1，1 means the x-axis name is 'batch', 0 means the x-axis name is 'epoch';
@@ -17,7 +17,7 @@ beefly.plot_metrics(columns=2, iter_num=None, mode=1, wait_num=1, figsize=None, 
 beefly.PlotMetricsOnBatch(metrics_name, columns=2, iter_num=None, wait_num=1, figsize=None, cell_size=(6, 4), valid_fmt="val_{}", eval_batch_num=None)
 ```
 
-# Parameter：
+### Parameter：
 - metrics_name：list，Customized evaluation indicator name list, sequentially created according to loss function and measurement function;
 - columns：int，default 2，The number of sub graphs that the width of metrics visualiztion image to accommodate at most;
 - iter_num：int，default None，Pre-specify the maximum value of x-axis in each sub-picture to indicate the maximum number of batch training;
@@ -32,7 +32,7 @@ beefly.PlotMetricsOnBatch(metrics_name, columns=2, iter_num=None, wait_num=1, fi
 beefly.PlotMetricsOnEpoch(metrics_name, columns=2, iter_num=None, wait_num=1, figsize=None, cell_size=(6, 4), valid_fmt="val_{}")
 ```
 
-# Parameter：
+### Parameter：
 - metrics_name：list，Customized evaluation indicator name list, sequentially created according to loss function and measurement function;
 - columns：int，default 2，The number of sub graphs that the width of metrics visualiztion image to accommodate at most;
 - iter_num：int，default None，Pre-specify the maximum value of x-axis in each sub-picture to indicate the maximum number of epoch training;
