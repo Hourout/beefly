@@ -12,6 +12,11 @@ Beefly在Jupyter Notebook中运行，我们推荐且使用Jupyter Notebook作为
 ```
 pip install beefly 
 ```
+也可以通过源代码安装
+```
+pip install git+git://github.com/Hourout/beefly.git
+```
+
 
 ## 功能
 - 通用机器学习训练可视化
