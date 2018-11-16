@@ -4,10 +4,18 @@ Beefly is efficient visualization training packages of Keras, enabling the live 
 
 Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as Beefly's developing environment.
 
-# Install
-you can install by pypi:
-```Bash
-pip install beefly 
+## Installation
+
+To install [this verson from PyPI](https://pypi.org/project/beefly/), type:
+
+```
+pip install beefly
+```
+
+To get the newest one from this repo (note that we are in the alpha stage, so there may be frequent updates), type:
+
+```
+pip install git+git://github.com/Hourout/beefly.git
 ```
 
 # Function
