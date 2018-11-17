@@ -1,3 +1,3 @@
 from .general_plot import plot_metrics
-from .keras_callbacks_PlotMetricsOnBatch import PlotMetricsBatch
+from .keras_callbacks_PlotMetricsOnBatch import PlotMetricsOnBatch
 from .keras_callbacks_PlotMetricsOnEpoch import PlotMetricsOnEpoch
