@@ -1,3 +1,6 @@
-from .general_plot import plot_metrics
-from .keras_callbacks_PlotMetricsOnBatch import PlotMetricsOnBatch
-from .keras_callbacks_PlotMetricsOnEpoch import PlotMetricsOnEpoch
+from ._general_plot import plot_metrics
+from ._keras_callbacks_PlotMetricsOnBatch import PlotMetricsOnBatch
+from ._keras_callbacks_PlotMetricsOnEpoch import PlotMetricsOnEpoch
+
+__version__ = '0.4.0'
+__author__ = 'JinQing Lee, Gaojie Wei'
