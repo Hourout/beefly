@@ -18,9 +18,6 @@ setup(name='beefly',
       license='MIT',
       classifiers=[
           'Framework :: Jupyter',
-          'Operating System :: MacOS',
-          'Operating System :: Microsoft',
-          'Operating System :: Linux',
           'Intended Audience :: Developers',
           'Intended Audience :: Education',
           'Intended Audience :: Science/Research',
@@ -29,7 +26,7 @@ setup(name='beefly',
           'Topic :: Scientific/Engineering :: Visualization',
           'License :: OSI Approved :: MIT License',
           'Programming Language :: Python :: 2.7',
-          'Programming Language :: Python :: 3.5'
+          'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6'
       ],
       packages=find_packages(),
