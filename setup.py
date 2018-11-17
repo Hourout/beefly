@@ -7,7 +7,7 @@ def readme():
 
 setup(name='beefly',
       version='0.2.0',
-      install_requires=['matplotlib>=3.0.0', 'notebook', 'tensorflow>=1.12.0'],
+      install_requires=['matplotlib', 'notebook', 'tensorflow>=1.12.0'],
       description='Dynamic visualization training service in Jupyter Notebook for Keras tf.keras and others.',
       long_description=readme(),
       long_description_content_type='text/markdown',
