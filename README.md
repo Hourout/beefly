@@ -10,7 +10,7 @@ Beefly is efficient visualization training packages of Keras, enabling the live 
 
 Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as Beefly's developing environment.
 
-![](/image/plot_metrics.gif)
+![](/image/plot_metrics000.gif)
 
 ## [API Document](/document/English_API.md)
 ## [API文档](/document/Chinese_API.md)
