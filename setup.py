@@ -6,7 +6,7 @@ def readme():
         return f.read()
 
 setup(name='beefly',
-      version='0.2.0',
+      version='0.4.0',
       install_requires=['matplotlib', 'notebook', 'tensorflow>=1.12.0'],
       description='Dynamic visualization training service in Jupyter Notebook for Keras tf.keras and others.',
       long_description=readme(),
@@ -25,7 +25,6 @@ setup(name='beefly',
           'Topic :: Scientific/Engineering :: Artificial Intelligence',
           'Topic :: Scientific/Engineering :: Visualization',
           'License :: OSI Approved :: MIT License',
-          'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3.5',
           'Programming Language :: Python :: 3.6'
       ],
