@@ -47,7 +47,7 @@ class plot_metrics():
     def draw(self, save_image=False, save_image_path=None, save_gif=False, save_gif_path=None):
         if self.polt_num%self.wait_num==0:
             clear_output(wait=True)
-            plt.figure(figsize=self.figsize)
+            figure = plt.figure(figsize=self.figsize)
             for metric_id, metric in enumerate(self.metrics):
                 plt.subplot((len(self.metrics)+1)//self.columns+1, self.columns, metric_id+1)
                 if self.iter_num is not None:
@@ -61,10 +61,10 @@ class plot_metrics():
             plt.tight_layout()
             if save_image:
                 if save_image_path is not None:
-                    plt.savefig(save_image_path)
+                    plt.savefig(save_image_path, bbox_inches='tight')
             if save_gif_path is not None:
                 if not tf.gfile.Exists('./gif_temp_dirs'): tf.gfile.MakeDirs('./gif_temp_dirs')
-                plt.savefig('./gif_temp_dirs/'+str(self.polt_num)+'.png')
+                plt.savefig('./gif_temp_dirs/'+str(self.polt_num)+'.png', bbox_inches='tight')
                 if save_gif:
                     imgs = []
                     image_path_list = sorted(tf.gfile.Glob('./gif_temp_dirs/*.png'), key = lambda i:int(i[16:-4]))
