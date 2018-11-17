@@ -6,19 +6,22 @@ def readme():
         return f.read()
 
 setup(name='beefly',
-      version='0.1.0',
-      install_requires=['matplotlib', 'notebook', 'tensorflow'],
-      description='Live training loss plot in Jupyter Notebook for Keras tf.keras and others.',
+      version='0.2.0',
+      install_requires=['matplotlib>=3.0.0', 'notebook', 'tensorflow>=1.12.0'],
+      description='Dynamic visualization training service in Jupyter Notebook for Keras tf.keras and others.',
       long_description=readme(),
       long_description_content_type='text/markdown',
       url='https://github.com/Hourout/beefly',
-      author='JinQing Lee,Gaojie Wei',
+      author='JinQing Lee, Gaojie Wei',
       author_email='hourout@163.com',
-      keywords=['keras', 'tf.keras', 'plot', 'chart'],
+      keywords=['keras-visualization', 'keras', 'tf.keras', 'plot', 'chart'],
       license='MIT',
       classifiers=[
-          'Development Status :: 3 - Alpha',
+          'Development Status :: stable',
           'Framework :: Jupyter',
+          'Operating System :: MacOS',
+          'Operating System :: Microsoft',
+          'Operating System :: Linux',
           'Intended Audience :: Developers',
           'Intended Audience :: Education',
           'Intended Audience :: Science/Research',
@@ -26,7 +29,9 @@ setup(name='beefly',
           'Topic :: Scientific/Engineering :: Artificial Intelligence',
           'Topic :: Scientific/Engineering :: Visualization',
           'License :: OSI Approved :: MIT License',
-          'Programming Language :: Python :: 3'
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3.5'
+          'Programming Language :: Python :: 3.6'
       ],
       packages=find_packages(),
       zip_safe=False)
