@@ -12,9 +12,9 @@ Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as B
 
 ![](/image/plot_metrics000.gif)
 
-## [API Document](/document/English_API.md)
-## [API文档](/document/Chinese_API.md)
-## [中文介绍](/document/Chinese.md)
+## [API Document](https://github.com/Hourout/beefly/blob/master/document/English_API.md)
+## [API文档](https://github.com/Hourout/beefly/blob/master/document/Chinese_API.md)
+## [中文介绍](https://github.com/Hourout/beefly/blob/master/document/Chinese.md)
 
 ## Installation
 
@@ -56,6 +56,6 @@ pip install git+git://github.com/Hourout/beefly.git
 
 
 ## Example
-- [beefly.plot_metrics()](/example/plot_metrics.ipynb)
-- [beefly.PlotMetricsOnBatch()](/example/PlotMetricsOnBatch.ipynb)
-- [beefly.PlotMetricsOnEpoch()](/example/PlotMetricsOnEpoch.ipynb)
+- [beefly.plot_metrics()](https://github.com/Hourout/beefly/blob/master/example/plot_metrics.ipynb)
+- [beefly.PlotMetricsOnBatch()](https://github.com/Hourout/beefly/blob/master/example/PlotMetricsOnBatch.ipynb)
+- [beefly.PlotMetricsOnEpoch()](https://github.com/Hourout/beefly/blob/master/example/PlotMetricsOnEpoch.ipynb)
