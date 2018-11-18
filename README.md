@@ -1,6 +1,6 @@
 # Beefly
 
-![](/image/1542382970(1).png)
+![](https://github.com/Hourout/beefly/blob/master/image/1542382970(1).png)
 
 ![PyPI version](https://img.shields.io/pypi/pyversions/beefly.svg)
 ![PyPI license](https://img.shields.io/pypi/l/beefly.svg)
@@ -10,7 +10,7 @@ Beefly is efficient visualization training packages of Keras, enabling the live 
 
 Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as Beefly's developing environment.
 
-![](/image/plot_metrics000.gif)
+![](https://github.com/Hourout/beefly/blob/master/image/plot_metrics000.gif)
 
 ## [API Document](https://github.com/Hourout/beefly/blob/master/document/English_API.md)
 ## [API文档](https://github.com/Hourout/beefly/blob/master/document/Chinese_API.md)
