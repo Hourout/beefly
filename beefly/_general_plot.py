@@ -73,6 +73,6 @@ class plot_metrics():
                             img=Image.open(image_path)
                         else:
                             imgs.append(Image.open(image_path))
-                    img.save('lyp.gif', save_all=True, append_images=imgs, duration=1)
+                    img.save(save_gif_path, save_all=True, append_images=imgs, duration=1)
                     tf.gfile.DeleteRecursively('./gif_temp_dirs')
             plt.show()
