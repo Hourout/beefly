@@ -1,11 +1,13 @@
+from PIL import Image
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from IPython.display import clear_output
 
 
-def draw(metrics, logs, epoch, columns, iter_num, wait_num, eval_batch_num, figsize, cell_size, valid_fmt):
-    logit = epoch%wait_num==0 if eval_batch_num is None else (epoch%wait_num==0)|(epoch%eval_batch_num==0)
+def draw(metrics, logs, batch, columns, iter_num, wait_num, eval_batch_num, figsize, cell_size, valid_fmt,
+         save_image=False, save_image_path=None, save_gif=False, save_gif_path=None):
+    logit = batch%wait_num==0 if eval_batch_num is None else (batch%wait_num==0)|(batch%eval_batch_num==0)
     if logit:
         clear_output(wait=True)
         plt.figure(figsize=figsize)
@@ -21,11 +23,28 @@ def draw(metrics, logs, epoch, columns, iter_num, wait_num, eval_batch_num, figs
             plt.xlabel('batch')
             plt.legend(loc='center right')
         plt.tight_layout()
+        if save_image:
+            if save_image_path is not None:
+                plt.savefig(save_image_path, bbox_inches='tight')
+        if save_gif_path is not None:
+            if not tf.gfile.Exists('./gif_temp_dirs'): tf.gfile.MakeDirs('./gif_temp_dirs')
+            plt.savefig('./gif_temp_dirs/'+str(batch)+'.png', bbox_inches='tight')
+            if save_gif:
+                imgs = []
+                image_path_list = sorted(tf.gfile.Glob('./gif_temp_dirs/*.png'), key = lambda i:int(i[16:-4]))
+                for k, image_path in enumerate(image_path_list):
+                    if k==0:
+                        img=Image.open(image_path)
+                    else:
+                        imgs.append(Image.open(image_path))
+                img.save(save_gif_path, save_all=True, append_images=imgs, duration=1)
+                tf.gfile.DeleteRecursively('./gif_temp_dirs')
         plt.show()
 
 class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
     def __init__(self, metrics_name, columns=2, iter_num=None, wait_num=1, figsize=None,
-                 cell_size=(6, 4), valid_fmt="val_{}", eval_batch_num=None):
+                 cell_size=(6, 4), valid_fmt="val_{}", eval_batch_num=None, save_image=False,
+                 save_image_path=None, save_gif=False, save_gif_path=None):
         """
         Arguments:
             metrics_name：list，Customized evaluation indicator name list,
@@ -53,6 +72,10 @@ class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
         self.batch_logs = defaultdict(list)
         self.batch_num = 0
         self.eval_batch_num = eval_batch_num
+        self.save_image = save_image
+        self.save_image_path = save_image_path
+        self.save_gif = save_gif
+        self.save_gif_path = save_gif_path
 
     def on_batch_end(self, batch, logs=None):
         self.batch_num += 1
@@ -73,11 +96,14 @@ class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
             self.figsize = (self.columns*self.cell_size[0], ((len(self.metrics)+1)//self.columns+1)*self.cell_size[1])
         for metric in logs:
             self.batch_logs[metric] += [logs[metric]]
-        draw(metrics=self.metrics, logs=self.batch_logs, epoch=self.batch_num, columns=self.columns,
+        draw(metrics=self.metrics, logs=self.batch_logs, batch=self.batch_num, columns=self.columns,
              iter_num=self.iter_num, wait_num=self.wait_num, eval_batch_num=self.eval_batch_num,
-             figsize=self.figsize, cell_size=self.cell_size, valid_fmt=self.valid_fmt)
+             figsize=self.figsize, cell_size=self.cell_size, valid_fmt=self.valid_fmt,
+             save_image=False, save_image_path=None, save_gif=False, save_gif_path=self.save_gif_path)
 
     def on_train_end(self, logs=None):
-        draw(metrics=self.metrics, logs=self.batch_logs, epoch=self.wait_num, columns=self.columns,
+        draw(metrics=self.metrics, logs=self.batch_logs, batch=self.wait_num, columns=self.columns,
              iter_num=self.iter_num, wait_num=self.wait_num, eval_batch_num=self.eval_batch_num,
-             figsize=self.figsize, cell_size=self.cell_size, valid_fmt=self.valid_fmt)
+             figsize=self.figsize, cell_size=self.cell_size, valid_fmt=self.valid_fmt,
+             save_image=self.save_image, save_image_path=self.save_image_path,
+             save_gif=self.save_gif, save_gif_path=self.save_gif_path)
