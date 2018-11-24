@@ -4,7 +4,7 @@ Beefly是一个简洁高效的keras可视化训练库，能够在训练过程中
 
 Beefly在Jupyter Notebook中运行，我们推荐且使用Jupyter Notebook作为beefly的开发环境。
 
-## [API文档](/document/Chinese_API.md)
+## [API文档](https://github.com/Hourout/beefly/blob/master/document/Chinese_API.md)
 
 
 ## 安装
