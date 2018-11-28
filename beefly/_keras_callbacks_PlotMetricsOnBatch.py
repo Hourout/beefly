@@ -1,4 +1,4 @@
-from PIL import Image
+import imageio
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from collections import defaultdict
@@ -30,14 +30,11 @@ def draw(metrics, logs, batch, columns, iter_num, wait_num, eval_batch_num, figs
             if not tf.gfile.Exists('./gif_temp_dirs'): tf.gfile.MakeDirs('./gif_temp_dirs')
             plt.savefig('./gif_temp_dirs/'+str(batch)+'.png', bbox_inches='tight')
             if save_gif:
-                imgs = []
-                image_path_list = sorted(tf.gfile.Glob('./gif_temp_dirs/*.png'), key = lambda i:int(i[16:-4]))
-                for k, image_path in enumerate(image_path_list):
-                    if k==0:
-                        img=Image.open(image_path)
-                    else:
-                        imgs.append(Image.open(image_path))
-                img.save(save_gif_path, save_all=True, append_images=imgs, duration=1)
+                frames = []
+                image_path_list = sorted(tf.gfile.Glob('./gif_temp_dirs/*.png'), key=lambda i:int(i[16:-4]))
+                for image_path in image_path_list:
+                    frames.append(imageio.imread(image_path))
+                imageio.mimsave(save_gif_path, frames, 'GIF', duration = 1)
                 tf.gfile.DeleteRecursively('./gif_temp_dirs')
         plt.show()
 
