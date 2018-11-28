@@ -15,6 +15,13 @@ beefly.plot_metrics(columns=2, iter_num=None, mode=1, wait_num=1, figsize=None, 
 
 方法
 ```python
+beefly.plot_metrics.update(log)
+```
+
+参数：
+- log：dict，键为指标的字符串名，值为batch或epoch训练的指标值
+
+```python
 beefly.plot_metrics.draw(save_image=False, save_image_path=None, save_gif=False, save_gif_path=None)
 ```
 
