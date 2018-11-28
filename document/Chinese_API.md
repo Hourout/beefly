@@ -13,6 +13,16 @@ beefly.plot_metrics(columns=2, iter_num=None, mode=1, wait_num=1, figsize=None, 
 - cell_size：tuple，默认为(6, 4)，表示自定义图像大小，当figsize=None时该参数起作用；
 - valid_fmt：str，默认为"val_{}"，下划线前面的字符串用来实现训练验证相同指标在同一子图中共同显示，要求训练指标不含有前缀，验证指标前缀为"val_{}"中的'val'；
 
+方法
+```python
+beefly.plot_metrics.draw(save_image=False, save_image_path=None, save_gif=False, save_gif_path=None)
+```
+
+参数：
+- save_image：bool，默认False，是否保存训练指标图片；
+- save_image_path：str，默认None，当save_image=True时，图片保存的路径地址；
+- save_gif：bool，默认False，是否保存训练指标gif图片；
+- save_gif_path：str，默认None，当save_gif=True时，gif图片保存的路径地址；
 
 ```python
 beefly.PlotMetricsOnBatch(metrics_name, columns=2, iter_num=None, wait_num=1, figsize=None, cell_size=(6, 4), valid_fmt="val_{}", eval_batch_num=None)
