@@ -17,7 +17,6 @@ setup(name='beefly',
       keywords=['keras-visualization', 'keras', 'tf.keras', 'plot', 'chart'],
       license='Apache License Version 2.0',
       classifiers=[
-          'Development Status :: 1 - Production/Stable',
           'Framework :: Jupyter',
           'Intended Audience :: Developers',
           'Intended Audience :: Education',
