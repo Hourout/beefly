@@ -3,7 +3,7 @@
 ![](https://github.com/Hourout/beefly/blob/master/image/1542382970(1).png)
 
 ![PyPI version](https://img.shields.io/pypi/pyversions/beefly.svg)
-![PyPI license](https://img.shields.io/pypi/l/beefly.svg)
+![Github license](https://img.shields.io/github/license/Hourout/beefly.svg)
 [![PyPI](https://img.shields.io/pypi/v/beefly.svg)](https://pypi.python.org/pypi/beefly)
 ![PyPI format](https://img.shields.io/pypi/format/beefly.svg)
 
