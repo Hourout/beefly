@@ -39,24 +39,24 @@ def draw(metrics, logs, batch, columns, iter_num, wait_num, eval_batch_num, figs
         plt.show()
 
 class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
+    """
+    Arguments:
+        metrics_name : list, Customized evaluation indicator name list,
+                      sequentially created according to loss function and measurement function;
+        columns : int, default 2，The number of sub graphs that the width of metrics
+                 visualiztion image to accommodate at most;
+        iter_num : int, default None, Pre-specify the maximum value of x-axis in each
+                  sub-picture to indicate the maximum number of batch training;
+        wait_num : int, default 1, Indicates how many batches are drawn each time a graph is drawn;
+        figsize : tuple，default None，Represents the customize image size;
+        cell_size : tuple, default (6, 4)，Indicates the customize image size, which is used when figsize=None;
+        valid_fmt : str, default "val_{}", The string preceding the underscore is used to
+                   implement the validation set indicator naming;
+        eval_batch_num : int, default None, Indicates how many batches are evaluated for each validation set;
+    """
     def __init__(self, metrics_name, columns=2, iter_num=None, wait_num=1, figsize=None,
                  cell_size=(6, 4), valid_fmt="val_{}", eval_batch_num=None, save_image=False,
                  save_image_path=None, save_gif=False, save_gif_path=None):
-        """
-        Arguments:
-            metrics_name：list，Customized evaluation indicator name list,
-                          sequentially created according to loss function and measurement function;
-            columns：int, default 2，The number of sub graphs that the width of metrics
-                     visualiztion image to accommodate at most;
-            iter_num：int, default None, Pre-specify the maximum value of x-axis in each
-                      sub-picture to indicate the maximum number of batch training;
-            wait_num：int, default 1, Indicates how many batches are drawn each time a graph is drawn;
-            figsize：tuple，default None，Represents the customize image size;
-            cell_size：tuple, default (6, 4)，Indicates the customize image size, which is used when figsize=None;
-            valid_fmt：str, default "val_{}", The string preceding the underscore is used to
-                       implement the validation set indicator naming;
-            eval_batch_num：int，default None, Indicates how many batches are evaluated for each validation set;
-        """
         tf.logging.set_verbosity(tf.logging.ERROR)
         self.metrics_name = metrics_name
         self.metrics = metrics_name
