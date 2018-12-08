@@ -8,17 +8,17 @@ from IPython.display import clear_output
 class plot_metrics():
     """
     Arguments:
-        columns：int，default 2, The number of sub graphs that the width of metrics
-                 visualiztion image to accommodate at most；
-        iter_num：int, default None, Pre-specify the maximum value of x-axis in each
+        columns : int, default 2, The number of sub graphs that the width of metrics
+                 visualiztion image to accommodate at most;
+        iter_num : int, default None, Pre-specify the maximum value of x-axis in each
                   sub-picture to indicate the maximum number of batch or epoch training;
-        mode：int，default 1, 1 means the x-axis name is 'batch', 0 means the x-axis name is 'epoch';
-        wait_num：int, default 1, Indicates how many batches or epochs are drawn
+        mode : int, default 1, 1 means the x-axis name is 'batch', 0 means the x-axis name is 'epoch';
+        wait_num : int, default 1, Indicates how many batches or epochs are drawn
                   each time a graph is drawn;
-        figsize：tuple, default None，Represents the customize image size;
-        cell_size：tuple, default (6, 4), Indicates the customize image size,
+        figsize : tuple, default None，Represents the customize image size;
+        cell_size : tuple, default (6, 4), Indicates the customize image size,
                    which is used when figsize=None;
-        valid_fmt：str, default "val_{}",The string preceding the underscore is used to
+        valid_fmt : str, default "val_{}",The string preceding the underscore is used to
                    instruction the training and validation is displayed together in the
                    same sub graph. The training indicator is not required to have a prefix.
                    The validation indicator prefix is 'val' in the "val_{}";
@@ -37,7 +37,10 @@ class plot_metrics():
         self.polt_num = 0
 
     def update(self, log):
-        
+        """
+        Arguments:
+        log : dict, name and value of loss or metrics;
+        """
         self.metrics = list(filter(lambda x: self.valid_fmt.split('_')[0] not in x.lower(), log))
         if self.figsize is None:
             self.figsize = (self.columns*self.cell_size[0], ((len(self.metrics)+1)//self.columns+1)*self.cell_size[1])
@@ -46,6 +49,13 @@ class plot_metrics():
         self.polt_num += 1
 
     def draw(self, save_image=False, save_image_path=None, save_gif=False, save_gif_path=None):
+        """
+        Arguments:
+        save_image : bool, default False, if save_image=True, train end save last image;
+        save_image_path : str, if save_image=True, train end save last image to path;
+        save_gif : bool, default False, if save_gif=True, train end save all image to gif;
+        save_gif_path : str, if save_gif=True, train end save gif to path;
+        """
         if self.polt_num%self.wait_num==0:
             clear_output(wait=True)
             figure = plt.figure(figsize=self.figsize)
