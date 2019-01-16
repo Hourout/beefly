@@ -13,9 +13,7 @@ Beefly is process in the Jupyter Notebook, so we recommend Jupyter Notebook as B
 
 ![](https://github.com/Hourout/beefly/blob/master/image/plot_metrics000.gif)
 
-## [API Document](https://github.com/Hourout/beefly/blob/master/document/English_API.md)
-## [API文档](https://github.com/Hourout/beefly/blob/master/document/Chinese_API.md)
-## [中文介绍](https://github.com/Hourout/beefly/blob/master/document/Chinese.md)
+| [API Document](https://github.com/Hourout/beefly/blob/master/document/English_API.md) | [API文档](https://github.com/Hourout/beefly/blob/master/document/Chinese_API.md) | [中文介绍](https://github.com/Hourout/beefly/blob/master/document/Chinese.md) |
 
 ## Installation
 
