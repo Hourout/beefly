@@ -1,4 +1,11 @@
-# BeeFly
+# Beefly
+
+![](https://github.com/Hourout/beefly/blob/master/image/1542382970(1).png)
+
+![PyPI version](https://img.shields.io/pypi/pyversions/beefly.svg)
+![Github license](https://img.shields.io/github/license/Hourout/beefly.svg)
+[![PyPI](https://img.shields.io/pypi/v/beefly.svg)](https://pypi.python.org/pypi/beefly)
+![PyPI format](https://img.shields.io/pypi/format/beefly.svg)
 
 ## 介绍
 
@@ -6,11 +13,13 @@ Beefly是一个简洁高效的keras可视化训练库，能够在训练过程中
 
 Beefly在Jupyter Notebook中运行，我们推荐且使用Jupyter Notebook作为beefly的开发环境。
 
+![](https://github.com/Hourout/beefly/blob/master/image/plot_metrics000.gif)
+
 | [API文档](https://github.com/Hourout/beefly/blob/master/document/Chinese_API.md) |
 
 
 ## 安装
-支持pip安装[beefly](https://pypi.org/project/beefly/):
+支持pip安装 [beefly](https://pypi.org/project/beefly/):
 ```
 pip install beefly 
 ```
