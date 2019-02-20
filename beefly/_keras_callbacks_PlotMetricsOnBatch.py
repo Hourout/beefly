@@ -27,15 +27,15 @@ def draw(metrics, logs, batch, columns, iter_num, wait_num, eval_batch_num, figs
             if save_image_path is not None:
                 plt.savefig(save_image_path, bbox_inches='tight')
         if save_gif_path is not None:
-            if not tf.gfile.Exists('./gif_temp_dirs'): tf.gfile.MakeDirs('./gif_temp_dirs')
+            if not tf.io.gfile.exists('./gif_temp_dirs'): tf.io.gfile.makedirs('./gif_temp_dirs')
             plt.savefig('./gif_temp_dirs/'+str(batch)+'.png', bbox_inches='tight')
             if save_gif:
                 frames = []
-                image_path_list = sorted(tf.gfile.Glob('./gif_temp_dirs/*.png'), key=lambda i:int(i[16:-4]))
+                image_path_list = sorted(tf.io.gfile.glob('./gif_temp_dirs/*.png'), key=lambda i:int(i[16:-4]))
                 for image_path in image_path_list:
                     frames.append(imageio.imread(image_path))
                 imageio.mimsave(save_gif_path, frames, 'GIF', duration = 1)
-                tf.gfile.DeleteRecursively('./gif_temp_dirs')
+                tf.io.gfile.rmtree('./gif_temp_dirs')
         plt.show()
 
 class PlotMetricsOnBatch(tf.keras.callbacks.Callback):
