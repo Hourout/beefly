@@ -54,7 +54,7 @@ class PlotMetricsOnEpoch(tf.keras.callbacks.Callback):
     def __init__(self, metrics_name, columns=2, iter_num=None, wait_num=1, figsize=None,
                  cell_size=(6, 4), valid_fmt="val_{}", save_image=False, save_image_path=None,
                  save_gif=False, save_gif_path=None):
-        tf.logging.set_verbosity(tf.logging.ERROR)
+#         tf.logging.set_verbosity(tf.logging.ERROR)
         self.metrics_name = metrics_name
         self.columns = columns
         self.iter_num = iter_num
