@@ -1,7 +1,8 @@
-import imageio
-import tensorflow as tf
-import matplotlib.pyplot as plt
 from collections import defaultdict
+
+import imageio
+from tensorflow.io import gfile
+import matplotlib.pyplot as plt
 from IPython.display import clear_output
 
 
@@ -74,13 +75,13 @@ class plot_metrics():
                 if save_image_path is not None:
                     plt.savefig(save_image_path, bbox_inches='tight')
             if save_gif_path is not None:
-                if not tf.io.gfile.exists('./gif_temp_dirs'): tf.io.gfile.makedirs('./gif_temp_dirs')
+                if not gfile.exists('./gif_temp_dirs'): gfile.makedirs('./gif_temp_dirs')
                 plt.savefig('./gif_temp_dirs/'+str(self.polt_num)+'.png', bbox_inches='tight')
                 if save_gif:
                     frames = []
-                    image_path_list = sorted(tf.io.gfile.glob('./gif_temp_dirs/*.png'), key=lambda i:int(i[16:-4]))
+                    image_path_list = sorted(gfile.glob('./gif_temp_dirs/*.png'), key=lambda i:int(i[16:-4]))
                     for image_path in image_path_list:
                         frames.append(imageio.imread(image_path))
                     imageio.mimsave(save_gif_path, frames, 'GIF', duration=1)
-                    tf.io.gfile.rmtree('./gif_temp_dirs')
+                    gfile.rmtree('./gif_temp_dirs')
             plt.show()
