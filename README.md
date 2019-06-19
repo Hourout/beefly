@@ -2,7 +2,7 @@
 
 ![](https://github.com/Hourout/beefly/blob/master/image/1542382970(1).png)
 
-![PyPI version](https://img.shields.io/pypi/pyversions/beefly.svg)
+![PyPI version](https://img.shields.io/pypi/pyversions/tensorview.svg)
 ![Github license](https://img.shields.io/github/license/Hourout/beefly.svg)
 [![PyPI](https://img.shields.io/pypi/v/beefly.svg)](https://pypi.python.org/pypi/beefly)
 ![PyPI format](https://img.shields.io/pypi/format/beefly.svg)
@@ -55,6 +55,6 @@ pip install git+git://github.com/Hourout/beefly.git
 
 
 ## Example
-- [beefly.plot_metrics()](https://github.com/Hourout/beefly/blob/master/example/plot_metrics.ipynb)
+- [beefly.PlotMetrics()](https://github.com/Hourout/beefly/blob/master/example/plot_metrics.ipynb)
 - [beefly.PlotMetricsOnBatch()](https://github.com/Hourout/beefly/blob/master/example/PlotMetricsOnBatch.ipynb)
 - [beefly.PlotMetricsOnEpoch()](https://github.com/Hourout/beefly/blob/master/example/PlotMetricsOnEpoch.ipynb)
