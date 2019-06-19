@@ -1,6 +1,6 @@
-from ._general_plot import plot_metrics
-from ._keras_callbacks_PlotMetricsOnBatch import PlotMetricsOnBatch
-from ._keras_callbacks_PlotMetricsOnEpoch import PlotMetricsOnEpoch
-
-__version__ = '0.8.0'
-__author__ = 'JinQing Lee, Gaojie Wei'
+from tensorview.train import PlotMetrics
+from tensorview.train import PlotMetricsOnBatch
+from tensorview.train import PlotMetricsOnEpoch
+from tensorview.train import __beefly_version__
+__version__ = __beefly_version__
+__author__ = 'JinQing Lee'
