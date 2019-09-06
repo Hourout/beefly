@@ -54,7 +54,8 @@ pip install git+git://github.com/Hourout/beefly.git
   - Support visual plotting in both batch way and epoch way periodically in batch way
 
 
-## Example
-- [beefly.PlotMetrics()](https://github.com/Hourout/beefly/blob/master/example/plot_metrics.ipynb)
-- [beefly.PlotMetricsOnBatch()](https://github.com/Hourout/beefly/blob/master/example/PlotMetricsOnBatch.ipynb)
-- [beefly.PlotMetricsOnEpoch()](https://github.com/Hourout/beefly/blob/master/example/PlotMetricsOnEpoch.ipynb)
+[more example](https://github.com/Hourout/tensorview/blob/master/example/readme.md)
+
+- [tensorview.train.PlotMetrics()](https://github.com/Hourout/tensorview/blob/master/example/tv.train.plot_metrics.ipynb)
+- [tensorview.train.PlotMetricsOnBatch()](https://github.com/Hourout/tensorview/blob/master/example/PlotMetricsOnBatch.ipynb)
+- [tensorview.train.PlotMetricsOnEpoch()](https://github.com/Hourout/tensorview/blob/master/example/PlotMetricsOnEpoch.ipynb)
