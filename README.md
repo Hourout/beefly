@@ -6,6 +6,7 @@
 ![Github license](https://img.shields.io/github/license/Hourout/beefly.svg)
 [![PyPI](https://img.shields.io/pypi/v/beefly.svg)](https://pypi.python.org/pypi/beefly)
 ![PyPI format](https://img.shields.io/pypi/format/beefly.svg)
+![downloads](https://img.shields.io/pypi/dm/beefly.svg)
 
 Beefly is efficient visualization training packages of Keras, enabling the live visualization of loss function and metrics during training process.
 
